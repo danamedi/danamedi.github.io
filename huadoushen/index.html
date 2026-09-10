@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都神医-都市神医小说推荐与精彩章节阅读指南</title>
+    <meta name="description" content="花都神医是当下热门的都市异能神医流小说，讲述主角在繁华都市中凭借绝世医术纵横花都、悬壶济世的传奇故事。本站提供小说介绍、角色解析、章节导读、书友交流与阅读建议。" />
+    <meta name="keywords" content="花都神医,都市神医小说,中医题材小说,异能医术,主角逆袭,热门网络小说,章节阅读,书评推荐" />
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f2ee;
+            color: #2e2a26;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部信息条 */
+        .top-bar {
+            background: #1d3b2e;
+            color: #cfdcd4;
+            font-size: 13px;
+            padding: 6px 0;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* 页眉品牌区 */
+        .site-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e6ddd2;
+            padding: 18px 0;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 46px;
+            height: 46px;
+            background: #c49a5c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1d3b2e;
+            letter-spacing: 2px;
+        }
+        .logo-text p {
+            font-size: 13px;
+            color: #7a6e5f;
+            letter-spacing: 1px;
+        }
+
+        /* 导航菜单 */
+        .main-nav {
+            background: #ffffff;
+            border-bottom: 2px solid #1d3b2e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav-menu li a {
+            display: block;
+            padding: 14px 22px;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+        .nav-menu li a:hover,
+        .nav-menu li.active a {
+            color: #1d3b2e;
+            border-bottom-color: #c49a5c;
+            background: #faf8f5;
+        }
+
+        /* 移动端菜单 */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #1d3b2e;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        /* Hero 首屏 */
+        .hero {
+            background: linear-gradient(145deg, #1d3b2e 0%, #2d5a43 100%);
+            color: #fff;
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -80px;
+            top: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(196, 154, 92, 0.12);
+            border-radius: 50%;
+        }
+        .hero .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .hero-copy {
+            flex: 1 1 400px;
+            z-index: 2;
+        }
+        .hero-copy h2 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            border-left: 6px solid #c49a5c;
+            padding-left: 18px;
+        }
+        .hero-copy p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #c49a5c;
+            color: #1d3b2e;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 26px;
+            font-weight: 800;
+            color: #e6c88c;
+        }
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        .hero-cover {
+            flex: 0 0 220px;
+            height: 280px;
+            background: linear-gradient(135deg, #c49a5c, #8f6f3f);
+            border-radius: 12px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+            border: 3px solid #e6c88c;
+            transform: rotate(1deg);
+        }
+        .hero-cover span {
+            font-size: 56px;
+            margin-bottom: 10px;
+        }
+
+        /* 章节标签 */
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0d6c8;
+            color: #1d3b2e;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title::before {
+            content: "";
+            width: 12px;
+            height: 24px;
+            background: #c49a5c;
+            border-radius: 4px;
+        }
+
+        /* 小说简介卡片 */
+        .intro-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-left: 6px solid #c49a5c;
+        }
+        .intro-card p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        /* 主角档案 */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .character-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            border-top: 4px solid #c49a5c;
+        }
+        .character-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1d3b2e;
+        }
+        .character-card p {
+            font-size: 14px;
+            color: #5b5248;
+        }
+
+        /* 章节列表 */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .chapter-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #eee7de;
+            transition: transform 0.2s;
+        }
+        .chapter-item:hover {
+            transform: translateY(-3px);
+            border-color: #c49a5c;
+        }
+        .chapter-name {
+            font-weight: 600;
+        }
+        .chapter-tag {
+            background: #f0e9df;
+            color: #7a5c32;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* 阅读指南 */
+        .guide-box {
+            background: #eef4ef;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .guide-box h3 {
+            color: #1d3b2e;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .guide-list li {
+            padding: 8px 0;
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+        }
+        .guide-list li::before {
+            content: "◆";
+            color: #c49a5c;
+            font-size: 14px;
+        }
+
+        /* 书友评价 */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .review-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            position: relative;
+        }
+        .review-card::before {
+            content: "“";
+            font-size: 60px;
+            color: #c49a5c;
+            position: absolute;
+            top: 6px;
+            left: 14px;
+            opacity: 0.3;
+        }
+        .review-text {
+            font-style: italic;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+        .reviewer {
+            font-weight: 700;
+            color: #1d3b2e;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .faq-q {
+            font-weight: 700;
+            color: #1d3b2e;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 10px;
+        }
+        .faq-q::before {
+            content: "Q";
+            background: #1d3b2e;
+            color: #fff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .faq-a {
+            padding-left: 34px;
+            color: #4d463e;
+            font-size: 15px;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1d3b2e;
+            color: #b9c9c0;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        .footer-cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 14px;
+            font-size: 17px;
+            border-left: 3px solid #c49a5c;
+            padding-left: 10px;
+        }
+        .footer-col ul li {
+            padding: 4px 0;
+            font-size: 14px;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: #fff;
+            }
+            .nav-menu.open {
+                display: flex;
+            }
+            .nav-menu li a {
+                padding: 12px 18px;
+                border-left: 3px solid transparent;
+            }
+            .nav-menu li a:hover {
+                border-left-color: #c49a5c;
+                background: #faf8f5;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-copy h2 {
+                font-size: 26px;
+            }
+            .hero-cover {
+                flex-basis: 100%;
+                height: 200px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .logo-text h1 {
+                font-size: 22px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero-stats {
+                gap: 14px;
+            }
+            .intro-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部信息条 -->
+    <div class="top-bar">
+        <div class="container">
+            <span>📖 花都神医 · 都市医流热度榜</span>
+            <span>今日更新 · 第428章</span>
+        </div>
+    </div>
+
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">花</div>
+                <div class="logo-text">
+                    <h1>花都神医</h1>
+                    <p>都市医仙 · 悬壶花都</p>
+                </div>
+            </div>
+            <button class="menu-toggle" aria-label="打开菜单" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- 导航 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu" id="navMenu">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">小说简介</a></li>
+                <li><a href="#">主角档案</a></li>
+                <li><a href="#">章节试读</a></li>
+                <li><a href="#">书友评论</a></li>
+                <li><a href="#">阅读指南</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero 首屏 -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-copy">
+                    <div class="hero-badge">🔥 都市神医流·热门连载</div>
+                    <h2>繁华花都，医手遮天<br>一卷银针，纵横都市</h2>
+                    <p>《花都神医》讲述年轻中医传人林逸尘，身负绝世医术与神秘传承，在繁华都市中一面济世救人，一面破解阴谋、快意恩仇。都市的灯红酒绿与医者的仁心仁术交织，谱写出一段传奇人生。</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-num">400+</div>
+                            <div class="stat-label">已更新章节</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">1200万</div>
+                            <div class="stat-label">全网阅读热度</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">9.2</div>
+                            <div class="stat-label">读者评分</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-cover">
+                    <span>🌿</span>
+                    花都神医<br>都市医仙传奇
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 小说简介 -->
+            <section>
+                <h2 class="section-title">小说简介</h2>
+                <div class="intro-card">
+                    <p>《花都神医》是一部以现代都市为背景的都市异能神医流小说。故事围绕年轻的中医传人林逸尘展开，他身怀祖传医术与一部失传的《玄医宝典》，从山村来到繁华的花都。</p>
+                    <p>初入花都，林逸尘便因一次意外出手救人而卷入豪门恩怨、地下势力与医学界的暗流之中。他凭借出神入化的针灸之术、望闻问切的绝学，治愈各种疑难杂症，赢得“花都神医”之名。与此同时，他逐渐揭开当年家族变故的真相，面对强大的敌人，他一边修行医道，一边提升自身实力，在都市中闯出一片天地。</p>
+                    <p>小说融合中医文化、都市生活、热血逆袭与情感故事，节奏明快，情节紧凑。作者对中医知识的运用为故事增添了独特的文化韵味，而主角亦正亦邪的行事风格与救死扶伤的医道精神也使其形象十分鲜明。</p>
+                </div>
+            </section>
+
+            <!-- 主角档案 -->
+            <section>
+                <h2 class="section-title">主要人物</h2>
+                <div class="character-grid">
+                    <div class="character-card">
+                        <h3>林逸尘 · 主角</h3>
+                        <p>身怀《玄医宝典》的青年中医，性格沉稳，医术超绝。表面淡然，内心却有坚定的道义与守护之心。从乡村到都市，一路用医术折服众人，逐步揭开身世之谜。</p>
+                    </div>
+                    <div class="character-card">
+                        <h3>苏婉清 · 女主角</h3>
+                        <p>花都苏家千金，聪慧干练，接手家族企业。与林逸尘因一次意外相识，从最初的不打不相识到后来的互相扶持，是主角在都市中重要的羁绊。</p>
+                    </div>
+                    <div class="character-card">
+                        <h3>秦若雪</h3>
+                        <p>市医院最年轻的美女主任医师，西医高材生。最初对中医持怀疑态度，后被林逸尘的医术折服，成为其医术上的知音与伙伴。</p>
+                    </div>
+                    <div class="character-card">
+                        <h3>老乞丐 · 神秘前辈</h3>
+                        <p>看似疯癫的流浪老人，实为隐世医道高手。与林逸尘的师门有深厚渊源，多次在关键时刻给予点拨与帮助。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最新章节导读 -->
+            <section>
+                <h2 class="section-title">精彩章节试读</h2>
+                <div class="chapter-grid">
+                    <div class="chapter-item">
+                        <div>
+                            <div class="chapter-name">第001章 初入花都</div>
+                            <div style="font-size:13px;color:#888;margin-top:4px;">山村少年，初临大都市</div>
+                        </div>
+                        <span class="chapter-tag">开篇</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div>
+                            <div class="chapter-name">第026章 妙手回春</div>
+                            <div style="font-size:13px;color:#888;margin-top:4px;">三针救下苏老爷子</div>
+                        </div>
+                        <span class="chapter-tag">高潮</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div>
+                            <div class="chapter-name">第058章 医道会武</div>
+                            <div style="font-size:13px;color:#888;margin-top:4px;">中医世家的挑战</div>
+                        </div>
+                        <span class="chapter-tag">对决</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div>
+                            <div class="chapter-name">第103章 玄医宝典</div>
+                            <div style="font-size:13px;color:#888;margin-top:4px;">传承秘密初现</div>
+                        </div>
+                        <span class="chapter-tag">伏笔</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div>
+                            <div class="chapter-name">第187章 花都医仙</div>
+                            <div style="font-size:13px;color:#888;margin-top:4px;">名动花都</div>
+                        </div>
+                        <span class="chapter-tag">成神</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div>
+                            <div class="chapter-name">第256章 情义两难</div>
+                            <div style="font-size:13px;color:#888;margin-top:4px;">红颜知己的抉择</div>
+                        </div>
+                        <span class="chapter-tag">情感</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 阅读指南 -->
+            <section class="guide-box">
+                <h3>📌 阅读指南与书友建议</h3>
+                <ul class="guide-list">
+                    <li>本书前期节奏稍缓，主要铺垫主角性格与都市背景，建议从第20章左右开始进入主线，体验更佳。</li>
+                    <li>小说中涉及的针灸、药方等中医知识均有出处参考，但为了剧情效果进行了艺术加工，请勿盲目模仿。</li>
+                    <li>主角成长线较长，感情线较丰富，适合喜欢都市爽文与医术元素的读者。</li>
+                    <li>目前连载平台正版更新稳定，建议支持正版阅读，每日双更。</li>
+                    <li>读者社区中常有关于剧情走向的讨论帖，适合书荒交流。</li>
+                </ul>
+            </section>
+
+            <!-- 书友评论 -->
+            <section>
+                <h2 class="section-title">书友热评</h2>
+                <div class="review-grid">
+                    <div class="review-card">
+                        <p class="review-text">看这本书让我对中医产生了浓厚兴趣！作者写针灸治病那段太精彩了，感觉像真的一样。主角不圣母也不无脑，智商在线。</p>
+                        <div class="reviewer">—— 书友·山野郎中</div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">从第一章追到现在，花都神医是少数几本把都市和医术结合得这么好的小说。每个病例都有看头，配角也不降智。</p>
+                        <div class="reviewer">—— 追更五年老书虫</div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">林逸尘这个角色塑造得很成功，既有医者仁心，又有该有的血性。苏婉清的人设也很讨喜，不拖后腿。</p>
+                        <div class="reviewer">—— 书友·青杏煮酒</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section style="margin-top:40px;">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-q">《花都神医》的作者是谁？还有哪些作品？</div>
+                    <p class="faq-a">该书作者为网络作家“青石老树”，擅长都市异能题材，此前曾著有《都市医仙》等作品。作者对中医文化有一定研究，文风细腻，剧情铺垫扎实。</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">这部小说目前是否已经完结？</div>
+                    <p class="faq-a">根据公开信息，该书仍在连载中，平台显示即将进入收尾阶段。具体完结时间请以连载平台公告为准。</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">在哪里可以阅读《花都神医》的正版章节？</div>
+                    <p class="faq-a">目前该书正版授权在多家主流网络文学平台均有上架，支持PC端与手机APP阅读。建议书友通过官方渠道订阅，支持作者创作。</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">小说中提到的“玄医宝典”是真实存在的古籍吗？</div>
+                    <p class="faq-a">“玄医宝典”是作者为剧情创作而虚构的医书设定。虽然书中融入了部分中医理论与古代医家思想，但并非真实流传的古籍，请读者理性看待。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>作品导航</h4>
+                    <ul>
+                        <li>小说简介</li>
+                        <li>章节列表</li>
+                        <li>角色介绍</li>
+                        <li>剧情分析</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>书友社区</h4>
+                    <ul>
+                        <li>读者讨论区</li>
+                        <li>同人创作</li>
+                        <li>建议反馈</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关推荐</h4>
+                    <ul>
+                        <li>都市医仙</li>
+                        <li>透视神医</li>
+                        <li>极品中医</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情提示</h4>
+                    <ul>
+                        <li>支持正版阅读</li>
+                        <li>理性讨论剧情</li>
+                        <li>健康上网</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 花都神医 · 都市医流书友指南 | 本页仅为作品介绍与读者交流用途，非官方站点</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单开关
+        function toggleMenu() {
+            var menu = document.getElementById('navMenu');
+            if (menu) {
+                menu.classList.toggle('open');
+            }
+        }
+        // 点击导航链接后自动收起菜单（移动端体验）
+        var navLinks = document.querySelectorAll('#navMenu a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                var menu = document.getElementById('navMenu');
+                if (menu && menu.classList.contains('open')) {
+                    menu.classList.remove('open');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
