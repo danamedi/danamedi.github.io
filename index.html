@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都新闻-今日花都最新资讯与热点事件报道</title>
+    <meta name="description" content="花都新闻频道，实时报道广州市花都区本地新闻、民生热点、交通出行、城市发展及便民服务信息，为您呈现最全面的花都每日资讯。" />
+    <meta name="keywords" content="花都新闻,今日花都,花都区,花都资讯,花都热点,广州花都,花都民生,花都时报" />
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background: #f5f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 顶部工具条 */
+        .topbar {
+            background: #1c2b3a;
+            color: #b0c4d9;
+            font-size: 13px;
+            padding: 6px 0;
+        }
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topbar-date {
+            letter-spacing: 0.5px;
+        }
+        .topbar-links span {
+            margin-left: 18px;
+            cursor: default;
+        }
+        .topbar-links a:hover {
+            color: #fff;
+        }
+        /* 页眉主体 */
+        .header {
+            background: #ffffff;
+            border-bottom: 3px solid #e11e2c;
+            padding: 18px 0;
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(145deg, #d11a2a, #b01020);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1c2b3a;
+            letter-spacing: 1px;
+        }
+        .logo-text p {
+            font-size: 13px;
+            color: #6a7b8c;
+            margin-top: -4px;
+            letter-spacing: 2px;
+        }
+        .header-search {
+            display: flex;
+            align-items: center;
+            background: #f0f2f5;
+            border-radius: 40px;
+            padding: 4px 4px 4px 18px;
+            border: 1px solid #e2e6ea;
+            min-width: 250px;
+        }
+        .header-search input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 14px;
+            flex: 1;
+            color: #333;
+        }
+        .header-search button {
+            background: #e11e2c;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .header-search button:hover {
+            background: #c01925;
+        }
+        /* 主导航 */
+        .main-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e8ebee;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .main-nav .container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            display: block;
+            padding: 14px 22px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #e11e2c;
+            border-bottom-color: #e11e2c;
+            background: #fff5f5;
+        }
+        .main-nav .nav-right {
+            margin-left: auto;
+            font-size: 14px;
+            color: #7f8c8d;
+            padding-right: 10px;
+        }
+        /* 滚动快讯 */
+        .breaking-news {
+            background: #fff8e6;
+            border-bottom: 1px solid #f0dcb0;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        .breaking-news .container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            overflow: hidden;
+        }
+        .breaking-label {
+            background: #e11e2c;
+            color: #fff;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            flex-shrink: 0;
+            letter-spacing: 1px;
+        }
+        .breaking-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #5a4a2a;
+            font-weight: 500;
+        }
+        /* 主布局 */
+        .main-layout {
+            padding: 30px 0 40px;
+        }
+        .main-layout .container {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 30px;
+        }
+        /* 左侧主内容 */
+        .content-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        /* Hero 焦点图 */
+        .hero-block {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            min-height: 320px;
+        }
+        .hero-main {
+            background: linear-gradient(140deg, #1a2634, #2c3e50);
+            color: #fff;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+        }
+        .hero-main::before {
+            content: "头条";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #e11e2c;
+            font-size: 13px;
+            padding: 2px 12px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+        .hero-main h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+        .hero-main p {
+            font-size: 15px;
+            opacity: 0.85;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .hero-meta {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+        .hero-sub {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        .hero-sub-item {
+            flex: 1;
+            padding: 18px 20px;
+            border-bottom: 1px solid #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .hero-sub-item:last-child {
+            border-bottom: none;
+        }
+        .hero-sub-item:hover {
+            background: #fafbfc;
+        }
+        .hero-sub-item span {
+            font-size: 13px;
+            color: #e11e2c;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .hero-sub-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1c2b3a;
+            line-height: 1.4;
+        }
+        /* 区块通用 */
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e8ebee;
+            padding-bottom: 10px;
+        }
+        .section-title h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1c2b3a;
+            position: relative;
+            padding-left: 16px;
+        }
+        .section-title h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 5px;
+            height: 24px;
+            background: #e11e2c;
+            border-radius: 4px;
+        }
+        .section-title .more {
+            margin-left: auto;
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        .section-title .more:hover {
+            color: #e11e2c;
+        }
+        /* 新闻卡片网格 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .news-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #f0f2f5;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .news-thumb {
+            height: 150px;
+            background: linear-gradient(120deg, #dbe4ed, #b8c6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            color: #6a7b8c;
+            position: relative;
+        }
+        .news-thumb .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(225,30,44,0.9);
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .news-body {
+            padding: 16px;
+        }
+        .news-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1c2b3a;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-body p {
+            font-size: 14px;
+            color: #5d6d7e;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: #9aa7b5;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #f4f6f8;
+            padding-top: 10px;
+        }
+        /* 列表式新闻 */
+        .news-list {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+        }
+        .news-list-item {
+            display: flex;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #f0f2f5;
+            gap: 15px;
+        }
+        .news-list-item:last-child {
+            border-bottom: none;
+        }
+        .news-list-idx {
+            font-size: 20px;
+            font-weight: 800;
+            color: #d5dce3;
+            width: 30px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .news-list-item:nth-child(1) .news-list-idx,
+        .news-list-item:nth-child(2) .news-list-idx,
+        .news-list-item:nth-child(3) .news-list-idx {
+            color: #e11e2c;
+        }
+        .news-list-content {
+            flex: 1;
+        }
+        .news-list-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+        .news-list-content p {
+            font-size: 13px;
+            color: #7f8c8d;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-list-time {
+            font-size: 13px;
+            color: #95a5a6;
+            flex-shrink: 0;
+        }
+        /* 侧边栏 */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .side-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+            border: 1px solid #f0f2f5;
+        }
+        .side-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1c2b3a;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f2f5;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .side-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #e11e2c;
+        }
+        .hot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .hot-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 14px;
+            border-bottom: 1px dashed #edf0f3;
+            padding-bottom: 10px;
+        }
+        .hot-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .hot-num {
+            background: #eef1f4;
+            color: #7f8c8d;
+            font-weight: 700;
+            font-size: 13px;
+            border-radius: 4px;
+            padding: 0 8px;
+            flex-shrink: 0;
+            line-height: 22px;
+        }
+        .hot-list li:nth-child(-n+3) .hot-num {
+            background: #e11e2c;
+            color: #fff;
+        }
+        .hot-list a {
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        .hot-list a:hover {
+            color: #e11e2c;
+        }
+        .side-tag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .side-tag a {
+            background: #f4f6f8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #34495e;
+            border: 1px solid #e8ebee;
+            transition: all 0.2s;
+        }
+        .side-tag a:hover {
+            background: #e11e2c;
+            color: #fff;
+            border-color: #e11e2c;
+        }
+        .side-info {
+            font-size: 14px;
+            color: #5d6d7e;
+            line-height: 1.8;
+        }
+        .side-info strong {
+            color: #1c2b3a;
+        }
+        /* 双栏民生 */
+        .dual-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .dual-col {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+        }
+        .dual-col h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1c2b3a;
+            border-left: 4px solid #e11e2c;
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+        .dual-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f4f6f8;
+        }
+        .dual-item:last-child {
+            border: none;
+        }
+        .dual-item h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .dual-item p {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        /* 便民服务 */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .service-item {
+            background: #f8f9fb;
+            text-align: center;
+            padding: 18px 8px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid #eef0f3;
+        }
+        .service-item:hover {
+            background: #fff0f0;
+            border-color: #e11e2c;
+        }
+        .service-item .ico {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        .service-item span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #34495e;
+        }
+        /* 资讯专题 */
+        .special-section {
+            background: linear-gradient(120deg, #f8fafc, #eef2f7);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .special-section h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #1c2b3a;
+        }
+        .special-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .special-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border-top: 3px solid #e11e2c;
+        }
+        .special-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1c2b3a;
+        }
+        .special-card p {
+            font-size: 13px;
+            color: #5d6d7e;
+            line-height: 1.6;
+        }
+        /* FAQ */
+        .faq-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+        }
+        .faq-section h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1c2b3a;
+        }
+        .faq-item {
+            border-bottom: 1px solid #f0f2f5;
+            padding: 14px 0;
+        }
+        .faq-item:last-child {
+            border: none;
+        }
+        .faq-q {
+            font-weight: 700;
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .faq-q::before {
+            content: "Q";
+            background: #e11e2c;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .faq-a {
+            color: #5d6d7e;
+            font-size: 15px;
+            padding-left: 32px;
+            line-height: 1.7;
+        }
+        /* 页脚 */
+        .footer {
+            background: #1c2b3a;
+            color: #a0b0c0;
+            margin-top: 40px;
+            padding: 30px 0 20px;
+        }
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-copy {
+            font-size: 13px;
+            color: #6c7a89;
+            text-align: center;
+            line-height: 1.6;
+        }
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .main-layout .container {
+                grid-template-columns: 1fr;
+            }
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .special-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-block {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 14px;
+                align-items: flex-start;
+            }
+            .header-search {
+                width: 100%;
+            }
+            .main-nav a {
+                padding: 12px 14px;
+                font-size: 15px;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .dual-section {
+                grid-template-columns: 1fr;
+            }
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .special-cards {
+                grid-template-columns: 1fr;
+            }
+            .topbar .container {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .hero-main h2 {
+                font-size: 22px;
+            }
+            .news-list-time {
+                display: none;
+            }
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .logo-text h1 {
+                font-size: 22px;
+            }
+            .main-nav a {
+                font-size: 14px;
+                padding: 10px 10px;
+            }
+            .hero-main {
+                padding: 20px;
+            }
+            .section-title h2 {
+                font-size: 18px;
+            }
+            .service-grid {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部信息 -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-date">2025年4月7日 星期一 · 花都融媒</div>
+            <div class="topbar-links">
+                <span>设为首页</span>
+                <span>收藏本站</span>
+                <a href="#">客户端</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页眉 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="logo-icon">花</div>
+                <div class="logo-text">
+                    <h1>花都新闻</h1>
+                    <p>HUADU NEWS</p>
+                </div>
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="搜索您关心的花都资讯...">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#" class="active">首页</a>
+            <a href="#">花都头条</a>
+            <a href="#">民生热点</a>
+            <a href="#">镇街动态</a>
+            <a href="#">交通出行</a>
+            <a href="#">城市建设</a>
+            <a href="#">文旅活动</a>
+            <a href="#">便民服务</a>
+            <span class="nav-right">花都区融媒体中心</span>
+        </div>
+    </nav>
+
+    <!-- 滚动快讯 -->
+    <div class="breaking-news">
+        <div class="container">
+            <span class="breaking-label">快讯</span>
+            <span class="breaking-text">地铁18号线北延段花都段施工顺利推进 · 花都区2025年十件民生实事全面启动 · 融创文旅城周末无人机表演时间调整</span>
+        </div>
+    </div>
+
+    <main class="main-layout">
+        <div class="container">
+            <!-- 左侧主要区域 -->
+            <div class="content-left">
+                <!-- 首屏焦点 -->
+                <div class="hero-block">
+                    <div class="hero-main">
+                        <h2>花都空铁融合示范区再提速 多个重点项目本月集中开工</h2>
+                        <p>广州花都正依托白云机场与广州北站双枢纽优势，加快打造空铁融合发展示范区，推动优质产业与城市功能双提升。</p>
+                        <div class="hero-meta">2025-04-07 08:20 · 花都发布</div>
+                    </div>
+                    <div class="hero-sub">
+                        <div class="hero-sub-item">
+                            <span>民生</span>
+                            <h3>花都区新增3所公办中小学 今秋将提供学位超5000个</h3>
+                        </div>
+                        <div class="hero-sub-item">
+                            <span>交通</span>
+                            <h3>云山大桥拓宽工程进入尾声 预计月底恢复双向八车道</h3>
+                        </div>
+                        <div class="hero-sub-item">
+                            <span>文旅</span>
+                            <h3>塱头古村春耕文化节开幕 游客体验传统农耕乐趣</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 今日要闻 -->
+                <section>
+                    <div class="section-title">
+                        <h2>今日要闻</h2>
+                        <a href="#" class="more">更多新闻 &gt;</a>
+                    </div>
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <div class="news-thumb">
+                                <span class="tag">政务</span>
+                                政
+                            </div>
+                            <div class="news-body">
+                                <h3>花都区委常委会召开会议 研究部署绿美花都生态建设</h3>
+                                <p>会议听取今年以来造林绿化与生态修复工作汇报，强调要持续推进森林城市品质提升。</p>
+                                <div class="news-meta"><span>花都融媒</span><span>1小时前</span></div>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <div class="news-thumb">
+                                <span class="tag">经济</span>
+                                经
+                            </div>
+                            <div class="news-body">
+                                <h3>花都汽车产业基地一季度产值同比增长9.5%</h3>
+                                <p>新能源汽车零部件配套项目加速落地，智能制造水平持续提升，产业链韧性进一步增强。</p>
+                                <div class="news-meta"><span>南方日报</span><span>2小时前</span></div>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <div class="news-thumb">
+                                <span class="tag">街镇</span>
+                                街
+                            </div>
+                            <div class="news-body">
+                                <h3>狮岭镇皮革皮具产业数字化转型服务周启动</h3>
+                                <p>活动将提供电商运营培训、3D设计软件应用指导等公益服务，助力传统产业升级。</p>
+                                <div class="news-meta"><span>狮岭发布</span><span>3小时前</span></div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- 民生与服务 双栏 -->
+                <div class="dual-section">
+                    <div class="dual-col">
+                        <h3>民生直通车</h3>
+                        <div class="dual-item">
+                            <h4>花都区政务服务中心推行“周末不打烊”服务</h4>
+                            <p>涉及不动产登记、医保报销等高频事项可预约办理，具体窗口安排已公布。</p>
+                        </div>
+                        <div class="dual-item">
+                            <h4>2025年花都区老旧小区改造名单公示</h4>
+                            <p>本轮共涉及12个小区，重点完善消防设施、加装电梯及管网改造。</p>
+                        </div>
+                        <div class="dual-item">
+                            <h4>花都区图书馆新馆试运营 开放时间调整</h4>
+                            <p>新馆位于花城街，设有亲子阅读区、24小时自助服务区，读者需提前预约。</p>
+                        </div>
+                    </div>
+                    <div class="dual-col">
+                        <h3>城市更新</h3>
+                        <div class="dual-item">
+                            <h4>田美村旧改项目复建区主体结构全面封顶</h4>
+                            <p>项目配套幼儿园、商业综合体，村民回迁指日可待。</p>
+                        </div>
+                        <div class="dual-item">
+                            <h4>花都湖国家湿地公园周边将新建两座人行天桥</h4>
+                            <p>目前方案已通过专家评审，预计下半年动工建设。</p>
+                        </div>
+                        <div class="dual-item">
+                            <h4>广州北站东广场地下空间开发启动招标</h4>
+                            <p>规划建设地下商业街与停车设施，提升北站枢纽换乘体验。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 热点排行 -->
+                <section>
+                    <div class="section-title">
+                        <h2>热点排行</h2>
+                        <a href="#" class="more">完整榜单 &gt;</a>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-list-item">
+                            <div class="news-list-idx">1</div>
+                            <div class="news-list-content">
+                                <h3>花都区教育局发布2025年中小学招生政策解读</h3>
+                                <p>公办小学网上报名时间确定，随迁子女积分入学规则有所调整。</p>
+                            </div>
+                            <span class="news-list-time">04-07</span>
+                        </div>
+                        <div class="news-list-item">
+                            <div class="news-list-idx">2</div>
+                            <div class="news-list-content">
+                                <h3>广清城际南延线花都段盾构始发</h3>
+                                <p>未来花都市民可快速直达广州中心城区，通勤时间将大幅缩短。</p>
+                            </div>
+                            <span class="news-list-time">04-06</span>
+                        </div>
+                        <div class="news-list-item">
+                            <div class="news-list-idx">3</div>
+                            <div class="news-list-content">
+                                <h3>花都区中医院新院区正式挂牌运营</h3>
+                                <p>设置床位800张，重点打造中医康复与老年病特色专科。</p>
+                            </div>
+                            <span class="news-list-time">04-05</span>
+                        </div>
+                        <div class="news-list-item">
+                            <div class="news-list-idx">4</div>
+                            <div class="news-list-content">
+                                <h3>赤坭镇九曲河畔油菜花海进入最佳观赏期</h3>
+                                <p>周末天气晴好，不少市民前往打卡拍照，当地同步推出乡村市集。</p>
+                            </div>
+                            <span class="news-list-time">04-04</span>
+                        </div>
+                        <div class="news-list-item">
+                            <div class="news-list-idx">5</div>
+                            <div class="news-list-content">
+                                <h3>花都区开展电动自行车安全隐患集中夜查行动</h3>
+                                <p>重点整治违规停放充电行为，检查小区及沿街商铺。</p>
+                            </div>
+                            <span class="news-list-time">04-03</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 专题聚焦 -->
+                <section class="special-section">
+                    <h2>专题 · 花都高质量发展一线观察</h2>
+                    <div class="special-cards">
+                        <div class="special-card">
+                            <h3>智造强区</h3>
+                            <p>探访花都智能工厂与数字化车间，看传统产业如何“老树发新芽”。</p>
+                        </div>
+                        <div class="special-card">
+                            <h3>绿美花都</h3>
+                            <p>记录花都湖湿地、王子山森林公园生态保护与修复的生动实践。</p>
+                        </div>
+                        <div class="special-card">
+                            <h3>百千万工程</h3>
+                            <p>聚焦镇街典型培育，展现城乡区域协调发展新画卷。</p>
+                        </div>
+                        <div class="special-card">
+                            <h3>花都文脉</h3>
+                            <p>寻访洪秀全故居、资政大夫祠，讲述花都历史人文故事。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 便民信息 -->
+                <section>
+                    <div class="section-title">
+                        <h2>便民服务</h2>
+                        <a href="#" class="more">更多服务 &gt;</a>
+                    </div>
+                    <div class="service-grid">
+                        <div class="service-item"><div class="ico">🚌</div><span>公交查询</span></div>
+                        <div class="service-item"><div class="ico">🏥</div><span>医院挂号</span></div>
+                        <div class="service-item"><div class="ico">🏫</div><span>学校信息</span></div>
+                        <div class="service-item"><div class="ico">💧</div><span>停水通知</span></div>
+                        <div class="service-item"><div class="ico">⚡</div><span>停电公告</span></div>
+                        <div class="service-item"><div class="ico">🌦️</div><span>天气预警</span></div>
+                        <div class="service-item"><div class="ico">🏛️</div><span>政务预约</span></div>
+                        <div class="service-item"><div class="ico">📞</div><span>便民电话</span></div>
+                    </div>
+                </section>
+
+                <!-- 常见问题 FAQ -->
+                <section class="faq-section">
+                    <h2>花都生活常见问题解答</h2>
+                    <div class="faq-item">
+                        <div class="faq-q">花都区外来人员子女如何申请积分入学？</div>
+                        <div class="faq-a">每年4月左右，花都区教育局会发布积分入学工作指引。申请人需在“广州市来穗人员积分制服务管理信息系统”完成积分核定，并在规定时间内填报志愿。具体条件及流程可关注“广州花都教育”官方公众号查看最新通知。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">花都广场附近有哪些公共停车场？</div>
+                        <div class="faq-a">花都广场地下停车场、来又来广场停车场以及周边的田美停车场均可使用。周末及节假日车位较紧张，建议优先选择地铁或公交出行。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">如何查询花都区最新公交线路调整？</div>
+                        <div class="faq-a">可下载“花都公交”APP或关注“花都交通”微信公众号。线路调整前，交通部门会提前3-5天发布公告，您也可以通过本网站的交通出行栏目获取汇总信息。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">花都区政务服务中心具体地址及办公时间？</div>
+                        <div class="faq-a">花都区政务服务中心位于花城南路与迎宾大道交界处（原花都汽车城综合服务大楼）。工作日办公时间为9:00-12:00，13:00-17:00，部分窗口周六上午正常服务。建议提前在“花都政务”小程序预约取号。</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="side-card">
+                    <h3>热榜 · 24小时</h3>
+                    <ul class="hot-list">
+                        <li><span class="hot-num">1</span><a href="#">花都区2025年十件民生实事项目出炉</a></li>
+                        <li><span class="hot-num">2</span><a href="#">广州北站至白云机场空侧专用道开通在即</a></li>
+                        <li><span class="hot-num">3</span><a href="#">花都区中小学学区划分范围公布</a></li>
+                        <li><span class="hot-num">4</span><a href="#">融创乐园4月演出时间表新鲜出炉</a></li>
+                        <li><span class="hot-num">5</span><a href="#">花都区人民医院新院区科室分布指南</a></li>
+                        <li><span class="hot-num">6</span><a href="#">新华街老旧小区加装电梯新规解读</a></li>
+                        <li><span class="hot-num">7</span><a href="#">花都气象台发布强对流天气提醒</a></li>
+                    </ul>
+                </div>
+                <div class="side-card">
+                    <h3>镇街快讯</h3>
+                    <ul class="hot-list">
+                        <li><span class="hot-num">街</span><a href="#">新华街：社区长者饭堂新增3个助餐点</a></li>
+                        <li><span class="hot-num">镇</span><a href="#">花山镇：文旅招商推介会签约5个项目</a></li>
+                        <li><span class="hot-num">镇</span><a href="#">梯面镇：红山村油菜花节周末开幕</a></li>
+                        <li><span class="hot-num">街</span><a href="#">秀全街：开展就业援助月专场招聘会</a></li>
+                        <li><span class="hot-num">镇</span><a href="#">炭步镇：塱头古村非遗市集人气旺</a></li>
+                    </ul>
+                </div>
+                <div class="side-card">
+                    <h3>花都印象</h3>
+                    <div class="side-info">
+                        <strong>花都区</strong>，隶属广东省广州市，是白云国际机场与广州北站所在地，素有“省城之屏障，南北粤咽喉”之称。区内有花都湖国家湿地公园、洪秀全故居、圆玄道观等知名景点。
+                    </div>
+                    <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:6px;">
+                        <span style="background:#f0f2f5; padding:2px 10px; border-radius:4px; font-size:13px;">🌊 花都湖</span>
+                        <span style="background:#f0f2f5; padding:2px 10px; border-radius:4px; font-size:13px;">🏯 洪秀全故居</span>
+                        <span style="background:#f0f2f5; padding:2px 10px; border-radius:4px; font-size:13px;">✈️ 白云机场</span>
+                        <span style="background:#f0f2f5; padding:2px 10px; border-radius:4px; font-size:13px;">🚄 广州北站</span>
+                    </div>
+                </div>
+                <div class="side-card">
+                    <h3>热门标签</h3>
+                    <div class="side-tag">
+                        <a href="#">地铁</a>
+                        <a href="#">学位</a>
+                        <a href="#">旧改</a>
+                        <a href="#">招聘</a>
+                        <a href="#">天气</a>
+                        <a href="#">社保</a>
+                        <a href="#">公积金</a>
+                        <a href="#">积分入学</a>
+                        <a href="#">文旅</a>
+                        <a href="#">乡村振兴</a>
+                        <a href="#">预制菜</a>
+                        <a href="#">空铁枢纽</a>
+                    </div>
+                </div>
+                <div class="side-card">
+                    <h3>报料热线</h3>
+                    <div style="font-size:16px; font-weight:700; color:#e11e2c; margin-bottom:6px;">020-8691 2345</div>
+                    <div style="font-size:13px; color:#7f8c8d;">邮箱：bd@huadunews.com</div>
+                    <div style="font-size:13px; color:#7f8c8d; margin-top:4px;">欢迎提供新闻线索，一经采用即付稿酬。</div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">广告服务</a>
+                <a href="#">联系方式</a>
+                <a href="#">人才招聘</a>
+                <a href="#">网站地图</a>
+            </div>
+            <div class="footer-copy">
+                <p>花都新闻 © 2025 花都区融媒体中心 版权所有</p>
+                <p>本网站所刊载信息，不代表本网观点。刊用本网站稿件，务经书面授权。</p>
+                <p>粤ICP备2025XXXXXX号 · 花都网安备440114020000XX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
